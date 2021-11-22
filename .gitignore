@@ -1,0 +1,6 @@
+SD701_Mining/data/*
+SD701_Mining/data_clean/*
+*.csv
+MDI720_OLS/*
+INF714_Ethique/*
+INF725_BD/*
