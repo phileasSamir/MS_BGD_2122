@@ -1,9 +1,9 @@
 # Travaux et rendus divers
 ## MS Big Data Telecom Paris 2021-2022
 ### Philéas Samir
-#### SOON : INF727 — MapReduce from scratch :  
+#### INF727 — MapReduce from scratch :  
 Démonstration de la loi d'Amdahl par l'expérience en recodant un wordcount distribué from scratch  
-#### MDI720 — Régression linéaire :  
+#### SOON — MDI720 — Régression linéaire :  
 Travaux Pratiques de mathématiques
 #### SD 701 — Big Data Mining :
 - TP : Clustering
