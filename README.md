@@ -9,5 +9,5 @@ Travaux Pratiques de mathématiques
 - TP : Clustering
 - Projet : Nettoyage de données d'élections de data.gouv.fr, prédiction du résultat de futures élections  
 #### INFMDI721 — Kit Big Data :
-Travaux Pratiques variés de manipulations de données en Python
-Projet de scraping, nettoyage et exploration de données
+- Travaux Pratiques variés de manipulations de données en Python
+- Projet de scraping, nettoyage et exploration de données
