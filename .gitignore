@@ -1,7 +1,6 @@
-SD701_Mining/data/*
-SD701_Mining/data_clean/*
+SD701_Mining/Projet/*/*
 *.csv
-MDI720_OLS/*
 INF714_Ethique/*
 INF725_BD/*
 */.ipynb_checkpoints/*
+MDI343_Machine_learning/*
