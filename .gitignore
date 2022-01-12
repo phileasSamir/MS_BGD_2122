@@ -3,4 +3,6 @@ SD701_Mining/Projet/*/*
 INF714_Ethique/*
 INF725_BD/*
 */.ipynb_checkpoints/*
-MDI343_Machine_learning/*
+MDI343_Machine_learning/*/*/*.py
+MDI343_Machine_learning/*/*/*.pdf
+MDI343_Machine_learning/*/*/*/*
