@@ -5,6 +5,11 @@ INF725_BD/*
 */.ipynb_checkpoints/*
 MDI343_Machine_learning/*/*/*.py
 MDI343_Machine_learning/*/*/*.pdf
+MDI343_Machine_learning/*/*/*.jpg
 MDI343_Machine_learning/*/*/*/*
 INF728_NoSQL/*
 Random/99b.txt
+*.tcp
+*.tsv
+MDI341_Machine_learning_advanced/*/*/*.pdf
+MDI341_Machine_learning_advanced/*/*/*.py
