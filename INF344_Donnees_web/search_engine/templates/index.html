@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Moteur de recherche pour Wikipedia Mathématiques</title>
+  </head>
+  <body>
+    
+     <header>
+        <h1>Moteur de recherche pour Wikipedia Mathématiques</h1>
+        <h2>Page d'accueil</h2>
+      </header>
+  
+
+    {% block body %}
+      {# Début du bloc "body", dont vous devez modifier le contenu #}
+
+      <div class="notifications">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+         {% if messages %}
+             {% for category, message in messages %}
+               <div class="{{ category }}">{{ message }}</div>
+             {% endfor %}
+         {% endif %}
+      {% endwith %}   
+      </div>
+      
+      <p>Veuillez renseigner l'objet de votre recherche : </p>
+         
+      <form action="/query" method="post">
+        <label for="query">Recherche </label>
+        <input name="query" id="query" type="text"> <br><br>
+      
+        <input type="radio" name="method" id=0 value="pagerank" checked="checked">
+        <label for=0>PageRank</label>
+        <input type="radio" name="method" id=1 value="tfidf">
+        <label for=1>TF-IDF</label><br><br>
+  
+        <input type="submit">
+      </form>
+
+    {# Fin du bloc "body" #}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Moteur de recherche pour Wikipedia Mathématiques</title>
+  </head>
+  <body>
+    
+     <header>
+        <h1>Moteur de recherche pour Wikipedia Mathématiques</h1>
+        <h5><a href="/">Retour à l'accueil </a> </h5>
+        <h4>Requête : {{ session.query }}  </h4>
+        <h4>Méthode : {{ session.method }}  </h4>
+      </header>
+  
+    {% block body %}      
+      <p class="form">Veuillez renseigner l'objet de votre recherche :</p>
+      <form action="/query" method="post">
+        <label for="query">Recherche : </label>
+        <input name="query" id="query" type="text"> <br>
+
+        <input type="radio" name="method" id=0 value="pagerank" checked="checked">
+        <label for=0>PageRank</label>
+        <input type="radio" name="method" id=1 value="tfidf">
+        <label for=1>TF-IDF</label><br>
+  
+        <input type="submit">
+      </form>
+
+        {% for result in session.results %} 
+        <p><a href={{result[0]}}>{{result[1]}} </a> <br>
+        {{result[2] + "..."}} </p>
+        {% endfor %}
+
+
+    {% endblock %}
+  </body>
+</html>

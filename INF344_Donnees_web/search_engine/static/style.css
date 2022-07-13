@@ -1,0 +1,106 @@
+/* Le CSS va ici */
+
+body {
+  background-color: rgb(255, 255, 255);
+    }
+
+header {
+  border: double;
+  /*background-image: url("rodin.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-repeat: no-repeat; Do not repeat the image */
+  background-color: rgb(216, 234, 240);
+  background-size: contain;
+  }
+
+h1 {
+  color: blue;
+  font-style: italic;
+  text-align: center;
+}
+
+h2 {
+  color: red;
+  text-align: center;
+}
+
+h4 {
+  color: saddlebrown;  
+  text-align: center;
+}
+
+h5 {
+  text-align: center;
+  font-style: italic;
+  color: black;
+}
+
+p.form {
+  font-family: georgia;
+  text-align: center;
+  font-style: italic;
+  box-sizing: content-box; 
+  margin-left: auto;
+  margin-right: auto; 
+  max-width: 25em;
+  margin-top: 2em;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+
+
+a {
+  font-family: georgia;
+  margin-left: auto;
+  margin-right: auto; 
+  
+}
+
+div[class="notification"]{
+}
+
+ul {list-style-type:none;}
+
+
+form {
+  box-sizing: content-box;  
+  height: auto;
+  padding: 1em;
+  text-align: center;
+  border: 2px dashed blue;
+  max-width: 15em;  
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+/* cacher les puces */ 
+input[type="radio"] {  display: visible; }
+
+/* Modifier le pointeur de souris sur les labels */
+input[type="radio"] + label {  cursor: pointer;  line-height: 1.5em; }
+
+/* Surligner en bleu le choix coché */
+input[type="radio"]:checked + label {  color: blue; }
+
+/* Afficher en police rouge quand on passe la souris */
+label:hover {  color:red; }
+
+.notifications {
+      margin-top: 2em;
+      font-style: italic;
+      text-align: center;
+    }
+
+.error { color: red ;}
+
+.warning { color: chocolate; }
+
+.info { color: green; }
+
+
+/* https://juliencrego.com/astuces/personnaliser-les-boutons-radio-et-checkbox-avec-css/ */

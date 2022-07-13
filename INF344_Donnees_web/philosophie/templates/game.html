@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% block body %}
+<h1 style="text-align: center; font-size: 1em;"><div class="wordart rainbow">
+    <span class="text">Wikipédia est quelque chose qui se doit surmonter</span>
+</div></h1>
+    <br><br>
+    <header>    
+        <div class="window" style="width: 320px; margin: auto;">
+            <div class="title-bar">
+              <div class="title-bar-text">Partie en cours</div>
+              <div class="title-bar-controls">
+                <form action="/" method="get" id="giveup">
+                    <button aria-label="Close" type="submit" form="giveup"></button>
+                </form>
+              </div>
+            </div>
+            <div class="window-body">
+          <ul>
+              <li>Pages visitées : {{ session.score }}</li>
+              <li>Vous avez demandé : {{ session.article }}</li>
+              <li>Vous avez eu : {{ title }}</li>
+          </ul>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <div class="window" style="width: 250px; margin: auto;">
+        <div class="title-bar">
+            <div class="title-bar-text">Options</div>
+            <div class="title-bar-controls">
+                <form action="/" method="get" id="giveup">
+                    <button aria-label="Close" type="submit" form="giveup"></button>
+                </form>
+            </div>
+        </div>
+        <div class="window-body">
+            <form action="move" method="post" id="formove">
+                <div class="field-row">
+                    <input type="hidden" name="nocheat" value=" {{ session.score }}">
+                    <input type="radio" name="destination" id="destination0" value="{{ refs[0] }}" checked="checked">
+                    <label for="destination0">{{ refs[0] }}</label>
+                </div>
+                {%for i in range(1, len)%}
+                <div class="field-row">
+                    <input type="radio" name="destination" id="destination{{ i }}" value="{{ refs[i] }}">
+                    <label for="destination{{ i }}">{{ refs[i] }}</label>
+                </div>
+                {%endfor%}
+            </form>
+            <br>
+            <section class="field-row" style="justify-content: flex-end;">
+                <form action="/" method="get" id="giveup">
+                    <button type="submit" form="giveup" value="Abandonner">Abandonner</button>
+                </form>
+                <button type="submit" form="formove" value="Continuer">Continuer</button>
+            </section>
+        </div>
+    </div>
+    
+{% endblock %}

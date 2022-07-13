@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Voir https://jdan.github.io/98.css/ -->
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <!-- Voir https://www.designpieces.com/2017/03/wordart-css3-text-effects/ -->
+    <link rel="stylesheet" href="https://www.designpieces.com/wp-content/uploads/2017/03/wordart.css" />
+    <!-- Les images (icône et arrière-plan) ne m'appartiennent pas -->
+    <!-- Par simplicité, et ce travail n'étant pas voué à être diffusé, on considérera qu'on rentre dans les exceptions aux droits d'auteur -->
+    <link rel="icon" href="static/nietzsche.jpg" type="image/icon type">
+    <title>Wikipédia est un pont</title>
+  </head>
+  <body style="background: url(static/bg.jpg) no-repeat center center fixed; 
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+        <div class="window" style="margin: auto; width: 250px">
+          <div class="title-bar">
+            <div class="title-bar-text">
+              {{ category }}
+            </div>
+            <div class="title-bar-controls">
+                  <button aria-label="Close" onClick="window.location.reload();"></button>
+            </div>
+          </div>
+          <div class="window-body">
+            <img src="static/{{ category }}.png" alt="Icon illustrating the flash message" style="display: block; margin-left: auto; margin-right: auto;"/>
+            <p style="text-align: center;">
+              {{ message }}
+            </p>
+          </div>
+        </div>
+        <br><br>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% block body %}
+      {# Début du bloc "body", dont vous devez modifier le contenu #}
+      <h1 style="text-align: center; font-size: 2em;"><div class="wordart blues"><span class="text">Cherchez la philosophie</span></div></h1>
+      <div class="window" style="margin: auto; width: 30%;">
+        <div class="title-bar">
+          <div class="title-bar-text">
+            Règles du jeu
+          </div>
+        </div>
+        <div class="window-body">
+          <p>Le but du jeu est de trouver la page Wikipédia <em>Philosophie</em> en traversant aussi peu de pages que possible.</p>
+          <p>Lorsque vous arrivez sur une nouvelle page, les 10 premiers liens vers d'autres pages Wikipédia vous sont renvoyés.</p>
+          <p>Vous choisirez l'une de ces pages pour continuer à naviguer, jusqu'à arriver à votre destination.</p>
+          <p>Il est interdit :</p>
+          <ul>
+            <li>De commencer directement à la page <em>Philosophie</em></li>
+            <li>De s'arranger avec les requêtes POST</li>
+            <li>De jouer dans plusieurs onglets en parallèle</li>
+          </ul>
+          <p>Vous perdrez la partie si la page que vous avez choisie ne contient aucun lien.</p>
+          <p>Vous pouvez quitter la partie à tout moment en fermant l'une des fenêtres de la page de jeu.</p>
+          <p><strong>Bonne chance !</strong></p>
+        </div>
+      </div>
+      <br>
+      <div class="window" style="margin: auto; width: 15%;">
+        <div class="title-bar">
+          <div class="title-bar-text">
+            Nouvelle partie
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="field-row" style="justify-content: center;">
+            <p>Page de départ :</p>
+          </div>
+          <div class="field-row" style="justify-content: center;">
+            <form action="new-game" method="post" id="formstart">
+              <input type="hidden" value=app.secret_key>
+              <input name="start" id="start" type="text">
+            </form>
+          </div>
+          <section class="field-row" style="justify-content: center;">
+            <button type="submit" form="formstart" value="Commencer">Commencer</button>
+          </section>
+        </div>
+      </div>
+      {# Fin du bloc "body" #}
+    {% endblock %}
+  </body>
+</html>
